@@ -16,6 +16,9 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
   private
   def group_params
     params.require(:group).permit(:title, :description)
